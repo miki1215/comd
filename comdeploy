@@ -4,3 +4,4 @@ id ec2-user
 newgrp docker
 sudo systemctl enable docker.service
 
+docker run -it --rm -v /:/mnt --name elso -e USERNAME=ec2-user -e USERID=1000 -e GROUPID=1000 miki1215/terminal:latest
