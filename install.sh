@@ -30,3 +30,5 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 
 wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+sudo dpkg -i ~/code_1.76.1-1678294265_amd64.deb
+
