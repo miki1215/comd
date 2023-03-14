@@ -24,3 +24,7 @@ sudo dpkg -i ~/rstudio-2022.12.0-353-amd64.deb
 sudo apt --fix-broken install
 git clone https://github.com/cxli233/Online_R_learning.git
                    
+wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version
