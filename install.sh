@@ -28,3 +28,5 @@ wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
+
+wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
