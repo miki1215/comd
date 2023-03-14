@@ -14,9 +14,9 @@ sudo apt update && sudo apt install -y microsoft-edge-stable
 sudo apt install -y freerdp2-dev
 set -o vi
 
-sudo apt-get install r-base r-base-dev
-sudo apt install libclang-dev 
-sudo apt install libssl1.1
+sudo apt-get install -y r-base r-base-dev
+sudo apt install -y libclang-dev 
+sudo apt install -y libssl1.1
 
 wget https://download1.rstudio.org/electron/bionic/amd64/rstudio-2022.12.0-353-amd64.deb
 sudo dpkg -i ~/rstudio-2022.12.0-353-amd64.deb
