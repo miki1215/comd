@@ -1,1 +1,83 @@
-https://system-test.onvue.com/system_test?customer=pearson_vue&clientcode=MICROSOFT&candidate_id=293487653&registration_id=444825736&locale=en-US
+
+set -g default-terminal "screen-256color"
+set -g default-terminal "xterm"
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+set -sg escape-time 1
+set -g mouse on
+setw -g mode-keys vi
+
+bind | split-window -hc "#{pane_current_path}"
+bind - split-window -vc "#{pane_current_path}"
+# List of plugins
+# Using scroll 
+setw -g mode-mouse on
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-open'
+
+set -g @continuum-restore 'on'
+set -g @open-B "https://www.google.com/search?q="
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'
+
+run '~/.tmux/plugins/tpm/tpm'
+
+let g:floaterm_keymap_toggle = '<F12>'
+map <F4> :set norelativenumber!<cr>
+map <F5> :set nonumber!<cr>
+
+map <F3> :FZF<cr>
+map <F2> :set paste!<cr>
+set clipboard=unnamed
+set clipboard=unnamedplus
+set backspace=indent,eol,start
+syntax on
+filetype plugin indent on
+let g:airline#extensions#tabline#enabled = 1
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+set smartindent
+set tabstop=4
+set shiftwidth=4 
+set expandtab
+set background=dark
+set splitbelow splitright
+set title
+set ttimeoutlen=0
+set wildmenu
+set path+=**
+set nocompatible
+set hidden
+set encoding=utf-8
+set textwidth=80
+
+set completeopt=menuone,longest
+set complete+=kspell
+
+
+call plug#begin()
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'voldikss/vim-floaterm'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+let g:gruvbox_italic=1
+set termguicolors
+colorscheme gruvbox
+
+set undofile " Maintain undo history between sessions
+
+ mkdir ~/.vim/undodir
+ set undodir=~/.vim/undodir
+
